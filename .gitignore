@@ -1,0 +1,6 @@
+#main.py
+*-main.py
+#object
+*.pyc
+#container
+devcontainer.json
