@@ -1,9 +1,12 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
 def print_last_digit(number):
 
-    if number < 0:
-        number = -number
-        
-    print("{:d}".format(number % 10), end="")
-    return number % 10
+    last_digit = abs(number)
+    while last_digit >= 10:
+        last_digit //= 10
+    
+    # Print the last digit
+    print(last_digit, end="")
+    
+    # Return the value of the last digit
+    return last_digit
