@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
-    #Print all names defined by hidden_4 module.
     import hidden_4
-
-    names = dir(hidden_4)
-    for name in names:
-        if name[:2] != "__":
-            print(name)
+    all_dir = dir(hidden_4)
+    avoid = "__"
+    for i in range(0, len(all_dir)):
+        if avoid not in all_dir[i]:
+            print(all_dir[i])
