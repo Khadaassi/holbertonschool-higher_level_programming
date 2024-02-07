@@ -6,12 +6,33 @@ class Square:
         - property setter def size(self, value)
     Instantiation with optional size.
     Public instance method: def area(self).
-    Public instance method: def my_print(self).
     """
 
     def __init__(self, size=0):
         """Initializes the data."""
         self.__size = size
+
+    def __eq__(self, other):
+        """Equal."""
+        if hasattr(other, 'size'):
+            return self.__size == other.__size
+        return self.__size == other
+
+    def __ne__(self, other):
+        """Not equal."""
+        return not self.__eq__(other)
+
+    def __lt__(self, other):
+        """Less than."""
+        if hasattr(other, 'size'):
+            return self.__size < other.__size
+        return self.__size < other
+
+    def __le__(self, other):
+        """Less than or equal."""
+        if hasattr(other, 'size'):
+            return self.__size <= other.__size
+        return self.__size <= other
 
     @property
     def size(self):
@@ -21,8 +42,8 @@ class Square:
     @size.setter
     def size(self, value):
         """Sets the size to a value."""
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
+        if not isinstance(value, int) or not isinstance(value, float):
+            raise TypeError("size must be a number")
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
@@ -30,13 +51,3 @@ class Square:
     def area(self):
         """Returns the current square area."""
         return self.__size ** 2
-
-    def my_print(self):
-        """Prints to stdout the square with the character #."""
-        if self.__size == 0:
-            print()
-        else:
-            for i in range(0, self.__size):
-                for j in range(0, self.__size):
-                    print("#", end="")
-                print()

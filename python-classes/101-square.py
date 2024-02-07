@@ -14,8 +14,21 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializes the data."""
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
+
+    def __str__(self):
+        """Str method for print from main module."""
+        my_str = ""
+        if self.__size == 0:
+            return ''
+        else:
+            my_str += '\n' * self.__position[1]
+            for i in range(0, self.__size):
+                my_str += ' ' * self.__position[0]
+                my_str += '#' * self.__size
+                my_str += '\n'
+            return my_str[:-1]
 
     @property
     def size(self):
@@ -57,12 +70,13 @@ class Square:
         """
         if self.__size == 0:
             print()
-            return
-        for y in range(0, self.__position[1]):
-            print()
-        for i in range(0, self.__size):
-            for x in range(0, self.__position[0]):
-                print(" ", end="")
-            for j in range(0, self.__size):
-                print("#", end="")
-            print()
+        else:
+            for y in range(0, self.__position[1]):
+                print()
+            for i in range(0, self.__size):
+                for x in range(0, self.__position[0]):
+                    print(" ", end="")
+                for j in range(0, self.__size):
+                    print("#", end="")
+                print()
+            return ''
