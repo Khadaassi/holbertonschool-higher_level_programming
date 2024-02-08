@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
-"""class Square that defines a square by: (based on 2-square.py)"""
+"""class Square that defines a square"""
 
 
 class Square:
+
+    """ Square class that define a square with is size"""
 
     def __init__(self, size=0):
         """Initializes the data."""
