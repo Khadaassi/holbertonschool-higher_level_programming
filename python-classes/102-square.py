@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-class Square:
-    """Represents a square.
+
+"""Represents a square.
     Private instance attribute: size:
         - property def size(self)
         - property setter def size(self, value)
     Instantiation with optional size.
     Public instance method: def area(self).
     """
-
+class Square:
     def __init__(self, size=0):
         """Initializes the data."""
         self.__size = size
