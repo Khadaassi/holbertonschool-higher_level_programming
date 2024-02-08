@@ -9,9 +9,8 @@
     Instantiation with data and next_node.
     """
 
+
 class Node:
-
-
     def __init__(self, data, next_node=None):
         """Initializes the data of the node."""
         self.data = data
@@ -41,6 +40,7 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
 """ Singly linked list.
     Private instance attribute: head.
     Simple instantiation.
@@ -49,8 +49,6 @@ class Node:
 
 
 class SinglyLinkedList:
-
-
     def __init__(self):
         """Initializes the linked list."""
         self.head = None
