@@ -11,6 +11,9 @@
 
 
 class Node:
+
+    """A node class."""
+
     def __init__(self, data, next_node=None):
         """Initializes the data of the node."""
         self.data = data
