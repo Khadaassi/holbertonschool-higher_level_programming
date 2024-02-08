@@ -40,11 +40,17 @@ class Square:
         return self.__size <= other
 
     @property
+
+    """Retrieves the size."""
+
     def size(self):
         """Retrieves the size."""
         return self.__size
 
     @size.setter
+
+    """Sets the size to a value."""
+    
     def size(self, value):
         """Sets the size to a value."""
         if not isinstance(value, int) or not isinstance(value, float):
