@@ -33,32 +33,28 @@ class Square:
             return self.__size < other.__size
         return self.__size < other
 
+    @property
+    def size(self):
+        """Retrieves the size."""
+        return self.__size
+
     def __le__(self, other):
         """Less than or equal."""
         if hasattr(other, 'size'):
             return self.__size <= other.__size
         return self.__size <= other
 
-    @property
-
-    """Retrieves the size."""
-
-    def size(self):
-        """Retrieves the size."""
-        return self.__size
-
     @size.setter
-
     """Sets the size to a value."""
-    
     def size(self, value):
         """Sets the size to a value."""
-        if not isinstance(value, int) or not isinstance(value, float):
-            raise TypeError("size must be a number")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
+    if not isinstance(value, int) or not isinstance(value, float):
+        raise TypeError("size must be a number")
+    elif value < 0:
+        raise ValueError("size must be >= 0")
+    self.__size = value
 
-    def area(self):
-        """Returns the current square area."""
-        return self.__size ** 2
+
+def area(self):
+    """Returns the current square area."""
+    return self.__size ** 2
