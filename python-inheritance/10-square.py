@@ -1,28 +1,27 @@
 #!/usr/bin/python3
-"""Module for Rectangle class."""
-BaseGeometry = __import__("7-base_geometry").BaseGeometry
+"""Square class that inherits from Rectangle """
+
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(BaseGeometry):
-    """This is a class for a square."""
-
+class Square(Rectangle):
+    """
+    This is a class for a square.
+    Args:
+        Rectangle (Rectangle): mother class
+    """
     def __init__(self, size):
-        """The constructor for Square class."""
-        self.integer_validator("size", size)
+        """
+        init a square
+        Args:
+            size (int): square side size
+        """
         self.__size = size
+        self.integer_validator("size", size)
+        super().__init__(size, size)
 
     def area(self):
-        """This method returns the area of the square."""
-        return self.__size**2
-
-    def __str__(self):
         """
-        This method returns a string representation of the square.
+        This method returns the area of the square.
         """
-        return "[Square] {}/{}".format(self.__size, self.__size)
-
-    def __repr__(self):
-        """
-        This method returns a string representation of the square.
-        """
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        return self.__size ** 2
