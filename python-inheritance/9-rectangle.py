@@ -12,8 +12,13 @@ class Rectangle:
         """The constructor for Rectangle class."""
         self.__width = width
         self.__height = height
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+
+    def integer_validator(self, name, value):
+        """This method validates value."""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
 
     def area(self):
         """This method returns the area of the rectangle."""
