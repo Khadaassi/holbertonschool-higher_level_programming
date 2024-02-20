@@ -102,3 +102,15 @@ def area(self):
     Return the area of the rectangle
     """
     return self.__width * self.__height
+
+def display(self):
+    """Prints the rectangle using '#' char in standard output (stdout).
+     If either the height or width is 0, it prints an empty line.
+    """
+    if self.height == 0 or self.width == 0:
+        print()
+    else:
+        for _ in range(self.y):
+            print()
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
