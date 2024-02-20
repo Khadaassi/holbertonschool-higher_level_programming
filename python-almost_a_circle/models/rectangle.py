@@ -114,3 +114,14 @@ def display(self):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+def __str__(self):
+    """"Returns a string representation of the rectangle.
+    Returns:
+        str: A string in the format "[Class Name] (id) x/y - width/height".
+    """
+    return "[{}] ({}) {}/{} - {}/{}".format(
+        self.__class__.__name__,
+        self.id, self.x, self.y,
+        self.__width, self.__height
+        )
