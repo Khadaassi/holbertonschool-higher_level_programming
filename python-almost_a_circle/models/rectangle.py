@@ -124,7 +124,6 @@ def __str__(self):
         str: A string in the format "[Class Name] (id) x/y - width/height".
     """
     return "[{}] ({}) {}/{} - {}/{}".format(
-        self.__class__.__name__, self.id, self.x, self.y, self.__width, self.__height
+        self.__class__.__name__, self.id, self.x, self.y,
+        self.__width, self.__height
     )
-
-
