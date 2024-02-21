@@ -105,7 +105,8 @@ class Rectangle(Base):
 
     def display(self):
         """
-        Method that prints in stdout the Rectangle instance with the character #
+        Method that prints in stdout the Rectangle
+        instance with the character #
         """
         if self.height == 0 or self.width == 0:
             print()
