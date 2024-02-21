@@ -106,8 +106,8 @@ def area(self):
 
 
 def display(self):
-    """Prints the rectangle using '#' char in standard output (stdout).
-    If either the height or width is 0, it prints an empty line.
+    """
+    Method that prints in stdout the Rectangle instance with the character #
     """
     if self.height == 0 or self.width == 0:
         print()
@@ -119,7 +119,7 @@ def display(self):
 
 
 def __str__(self):
-    """ "Returns a string representation of the rectangle.
+    """ 
     Returns:
         str: A string in the format "[Class Name] (id) x/y - width/height".
     """
@@ -127,3 +127,33 @@ def __str__(self):
         self.__class__.__name__, self.id, self.x, self.y,
         self.__width, self.__height
     )
+
+def update(self, *args, **kwargs):
+    """
+    Updates the class Rectangle by assigning an argument to each attribute.
+    Args:
+        *args: Variable-length positional args for id, width, height, x, y.
+        **kwargs: Keyword arguments for id, width, height, x, and y.
+    """
+    if args:
+        attributs = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            if i < len(attributs):
+                setattr(self, attributs[i], arg)
+    else:
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+def to_dictionary(self):
+        """
+        Returns the dictionary representation of a Rectangle.
+        Returns:
+            dict: A dictionary containing the id, width, height, x, and y.
+        """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
