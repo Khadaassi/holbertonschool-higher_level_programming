@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 
-""" This module contains a function that divides all elements of a matrix """
+"""
+
+This module defines a matrix division function.
+
+"""
 
 
 def matrix_divided(matrix, div):
@@ -19,6 +23,8 @@ def matrix_divided(matrix, div):
     Return:
         new_matrix (list of lists):a new matrix w/ elts divided by div
     """
+
+    error_msg = "matrix must be a matrix (list of lists) of integers/floats"
 
     if (
         not isinstance(matrix, list) or matrix == [] or

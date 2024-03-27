@@ -1,22 +1,21 @@
 #!/usr/bin/python3
 
-""" Square-printing function """
+""" Function that adds 2 newlines after each of these characters: . ? and : """
 
 
-def print_square(size):
+def text_indentation(text):
     """
-    Square-printing function
-    Prints a square with the character #
+    Adds 2 newlines after these char : ".?:"
     Args:
-        size (int): size of square
+        text (string): text to modify and to print
     Raises:
-        TypeError: if size is not an integer
-        ValueError: if size is less than 0
+        TypeError: if text is not a string
     """
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
 
-    for i in range(size):
-        print("#" * size)
+    for ponctuation in ".?:":
+        text = (ponctuation + "\n\n").join(
+            [line.strip(" ") for line in text.split(ponctuation)])
+
+    print("{}".format(text), end="")

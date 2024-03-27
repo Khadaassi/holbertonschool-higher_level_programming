@@ -8,17 +8,17 @@ Module to import to use ``say_my_name``
 
 Usage:
 
-    >>> say_my_name("Slim", "Shady")
-    My name is Slim Shady
+    >>> say_my_name("Snoop", "Dogg")
+    My name is Snoop Dogg
 
-    >>> say_my_name("William", "Charcutier")
-    My name is William Charcutier
+    >>> say_my_name("Laetitia", "Beles")
+    My name is Laetitia Beles
 
-    >>> say_my_name("Beyonce")
-    My name is Beyonce 
+    >>> say_my_name("Alexis")
+    My name is Alexis 
 
-    >>> say_my_name("", "Bond")
-    My name is  Bond
+    >>> say_my_name("", "Thomas")
+    My name is  Thomas
 
     >>> say_my_name("James", "")
     My name is James 

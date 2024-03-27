@@ -1,22 +1,89 @@
-#!/usr/bin/python3
+The text_indentation module
+=======================
 
-""" Square-printing function """
 
+Module to import to use ``text_indentation``
 
-def print_square(size):
-    """
-    Square-printing function
-    Prints a square with the character #
-    Args:
-        size (int): size of square
-    Raises:
-        TypeError: if size is not an integer
-        ValueError: if size is less than 0
-    """
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    if size < 0:
-        raise ValueError("size must be >= 0")
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
 
-    for i in range(size):
-        print("#" * size)
+Usage
+
+    >>> text_indentation("Hello?")
+    Hello?
+    <BLANKLINE>
+
+    >>> text_indentation("Houston? It's Buzz.")
+    Houston?
+    <BLANKLINE>
+    It's Buzz.
+    <BLANKLINE>
+
+    >>> text_indentation("Do you copy? It's alive. I repeat: alive.")
+    Do you copy?
+    <BLANKLINE>
+    It's alive.
+    <BLANKLINE>
+    I repeat:
+    <BLANKLINE>
+    alive.
+    <BLANKLINE>
+
+    >>> text_indentation("?????")
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+
+    >>> text_indentation("Help.Iam:Losing.Grrrr?")
+    Help.
+    <BLANKLINE>
+    Iam:
+    <BLANKLINE>
+    Losing.
+    <BLANKLINE>
+    Grrrr?
+    <BLANKLINE>
+
+    >>> text_indentation(str(30 + 12) + "?" + str(845 - 179))
+    42?
+    <BLANKLINE>
+    666
+
+    >>> text_indentation(str(-8 - 10))
+    -18
+
+Incorrect Usage
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation("Je suis une petite string.", "Je suis une autre petite string")
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+    >>> text_indentation(42)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation([13, 3.14])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(text)
+    Traceback (most recent call last):
+    NameError: name 'text' is not defined
+
+    >>> text_indentation(Bernard)
+    Traceback (most recent call last):
+    NameError: name 'Bernard' is not defined
