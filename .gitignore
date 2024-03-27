@@ -4,3 +4,8 @@
 *.pyc
 #container
 devcontainer.json
+*.devcontainer
+*.DS_Store
+*.yml
+*.json
+.gitignore
