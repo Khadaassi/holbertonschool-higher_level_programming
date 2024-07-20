@@ -9,3 +9,4 @@ devcontainer.json
 *.yml
 *.json
 .gitignore
+.DS_Store
