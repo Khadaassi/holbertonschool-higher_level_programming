@@ -5,8 +5,8 @@
 #container
 devcontainer.json
 *.devcontainer
-#*.DS_Store
+*.DS_Store
 *.yml
 *.json
 .gitignore
-#.DS_Store
+.DS_Store
